@@ -1,39 +1,28 @@
 import { useState } from "react";
 import Head from "next/head";
-import { Form, Input, Button, Checkbox, Menu } from "antd";
-import { MenuOutlined } from "@ant-design/icons/lib/icons";
+import TopHeader from "../components/TopHeader";
+import CarouselItem from "../components/CarouselItem";
+import { Carousel } from "antd";
+import ProductItem from "../components/ProductItem";
 
 export default function Home() {
-  const [name, setName] = useState("");
-
-  const onFinish = (values) => {
-    console.log("Success:", values);
-  };
-
-  const onFinishFailed = (errorInfo) => {
-    console.log("Failed:", errorInfo);
-  };
   return (
     <div className="flex flex-col items-center justify-center min-h-screen py-2">
       <Head>
-        <title>Create Next App</title>
+        <title>Ecommerce</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className="flex flex-col items-center justify-center w-full flex-1 px-20 text-center">
-        <div className="flex justify-between w-full">
-          <MenuOutlined />
-          <div className="list-none flex space-x-4">
-            <li>WishList</li>
-            <li>Cart</li>
-            <li>Login</li>
+      <main className="flex flex-col items-center justify-start w-full flex-1  text-center pt-1">
+        <TopHeader />
+        <div className=" w-full px-20 pt-3">
+          <CarouselItem />
+          <div>
+            <ProductItem />
           </div>
         </div>
-        <br />
-        <br />
-        <br />
-        <br />
-        <div>
+
+        {/* <div>
           What is Lorem Ipsum? Lorem Ipsum is simply dummy text of the printing
           and typesetting industry. Lorem Ipsum has been the industry's standard
           dummy text ever since the 1500s, when an unknown printer took a galley
@@ -81,7 +70,7 @@ export default function Home() {
           is therefore always free from repetition, injected humour, or
           non-characteristic words etc. 5 paragraphs words bytes lists Start
           with 'Lorem ipsum dolor sit amet...'
-        </div>
+        </div> */}
       </main>
     </div>
   );
